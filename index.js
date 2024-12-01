@@ -17,9 +17,9 @@ database.connect();
 
 const routeClient = require("./routes/client/index.route");
 
-app.set('views', './views')
+app.set('views', `${__dirname}/views`)
 app.set('view engine', 'pug')
-app.use(express.static('public'))
+app.use(express.static(`${__dirname}/public`))
 
 app.use(cookieParser('keyboard cat'));
 app.use(session({ cookie: { maxAge: 60000 } }));
